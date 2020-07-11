@@ -9,7 +9,9 @@ This Tool allows you to do simple request in order to check the functionality of
  - Download the latest release from [here](https://github.com/Hopefuls/AdvancedLicense-Tester/releases).
  - Simply run the program by either using `java -jar AdvancedLicense-Tester.jar` or executing it through the desktop itself by double-clicking.
  - a Window like this should open now (may vary between versions)
+ 
 ![The Dialog itself](https://yes.is-inside.me/wYAkt9FB.png)
+
  - Fill out the corresponding fields
 	 - Verification URL from your AdvancedLicense Licensing Panel (for example `https://example.com/licensing/verify.php`)
 	 - License Key with your freshly generated Key from your License Panel (under *add Licenses*)
@@ -17,8 +19,10 @@ This Tool allows you to do simple request in order to check the functionality of
  - Press *OK*
  - You should get something like this in return
  ![A Valid Key! hurray!](https://yes.is-inside.me/QksCQU4Q.png)
+ 
 The results can of course vary between the corresponding Validation Types shown on the [Spigot Page](https://www.spigotmc.org/resources/advancedlicense.20823/)
-![Server Valid! Atleast that works](https://yes.is-inside.me/bd7OaB6l.png)![Oh dang, time to recheck!](https://yes.is-inside.me/GRAsSsf0.png)
+![Server Valid! Atleast that works](https://yes.is-inside.me/bd7OaB6l.png)
+![Oh dang, time to recheck!](https://yes.is-inside.me/GRAsSsf0.png)
 
 ##
 ## Currently known Bugs (well not really bugs)
