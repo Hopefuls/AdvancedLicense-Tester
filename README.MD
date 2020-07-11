@@ -18,6 +18,7 @@ This Tool allows you to do simple request in order to check the functionality of
 	 - Debug Mode Output (optional) if you want to receive more Advanced output such as request informations.
  - Press *OK*
  - You should get something like this in return
+ 
  ![A Valid Key! hurray!](https://yes.is-inside.me/QksCQU4Q.png)
  
 The results can of course vary between the corresponding Validation Types shown on the [Spigot Page](https://www.spigotmc.org/resources/advancedlicense.20823/)
