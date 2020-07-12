@@ -52,21 +52,43 @@ public class GUI extends JFrame {
 
 
     private void onOK() {
-        GateKeeper.status.setVisible(true);
-        String License = LicenseKey.getText();
-        String Validation = VerificationURL.getText();
-        boolean Debug = debugModeOutputCheckBox.isSelected();
-        if (License.isEmpty() || Validation.isEmpty()) {
-            LogHandler.setStatus("Please fill all the required fields!", Color.red);
-
-        } else {
-            new startVerification(License, Validation, Debug);
+        try {
+            if (ConnectorThread.currentThread.isAlive() || ConnectorThread.currentThread == null) {
+                LogHandler.setStatus("Request still running, press CANCEL to abort", Color.blue);
+                return;
+            }
+        } catch (NullPointerException e) {
+            //fuck you because java
         }
-        //  dispose();
+
+        try {
+
+            GateKeeper.status.setVisible(true);
+            String License = LicenseKey.getText();
+            String Validation = VerificationURL.getText();
+            boolean Debug = debugModeOutputCheckBox.isSelected();
+            if (License.isEmpty() || Validation.isEmpty()) {
+                LogHandler.setStatus("Please fill all the required fields!", Color.red);
+
+            } else if (!Validation.toLowerCase().startsWith("http://") && !Validation.toLowerCase().startsWith("https://")) {
+                LogHandler.setStatus("Missing Protocol (https:// or http://)", Color.red);
+            } else {
+                new ConnectorThread(License, Validation, Debug).connect();
+            }
+            //  dispose();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
+
     private void onCancel() {
-        // add your code here if necessary
-        dispose();
+        if (ConnectorThread.currentThread.isAlive()) {
+            ConnectorThread.currentThread.interrupt();
+            LogHandler.setStatus("Request aborted!", Color.red);
+        } else {
+            dispose();
+        }
     }
 }

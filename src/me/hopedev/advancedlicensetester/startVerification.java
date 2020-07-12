@@ -17,7 +17,10 @@ public class startVerification {
                 if (AdvancedLicense.responsecode == 404)
                     LogHandler.setStatus("LicenseSystem could not be reached or doesn't exist, see log above.", Color.red);
                 else
-                    LogHandler.setStatus("PAGE_ERROR! See Log above", Color.red);
+                    LogHandler.addLog(AdvancedLicense.TransferException.getLocalizedMessage());
+                LogHandler.addLog(AdvancedLicense.TransferException.getMessage());
+                LogHandler.setStatus("PAGE_ERROR! See Log above", Color.red);
+
 
                 break;
             case WRONG_RESPONSE:

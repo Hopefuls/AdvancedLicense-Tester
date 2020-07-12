@@ -173,6 +173,7 @@
                 <properties>
                   <alignmentX value="0.0"/>
                   <alignmentY value="0.0"/>
+                  <editable value="false"/>
                   <enabled value="true"/>
                   <font name="Consolas"/>
                   <margin top="1" left="1" bottom="1" right="1"/>

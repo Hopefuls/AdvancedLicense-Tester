@@ -10,6 +10,8 @@ public class LogHandler {
     public static void addLog(String x) {
         sb.append(x + "\n");
         GateKeeper.output.setText(sb.toString());
+        GateKeeper.output.setText(sb.toString());
+
 
     }
 

@@ -17,6 +17,7 @@ public class AdvancedLicense {
 	private LogType logType = LogType.NORMAL;
 	private String securityKey = "YecoF0I6M05thxLeokoHuW8iUhTdIUInjkfF";
 	private boolean debug = false;
+	public static Exception TransferException;
 
 	public AdvancedLicense(String licenseKey, String validationServer) {
 		this.licenseKey = licenseKey;
@@ -77,7 +78,7 @@ public class AdvancedLicense {
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
 
 		int responseCode = con.getResponseCode();
-		this.responsecode = responseCode;
+		responsecode = responseCode;
 		if (debug) {
 			log("\nSending 'GET' request to URL : " + url);
 			log("Response Code : " + responseCode);
@@ -134,6 +135,7 @@ public class AdvancedLicense {
 					return ValidationType.WRONG_RESPONSE;
 			}
 		} catch (IOException e) {
+			TransferException = e;
 			if (debug)
 				e.printStackTrace();
 			return ValidationType.PAGE_ERROR;
@@ -168,7 +170,7 @@ public class AdvancedLicense {
 	//
 
 	public enum LogType {
-		NORMAL, LOW, NONE;
+		NORMAL, LOW, NONE
 	}
 
 	//
@@ -176,6 +178,6 @@ public class AdvancedLicense {
 	//
 
 	public enum ValidationType {
-		WRONG_RESPONSE, PAGE_ERROR, URL_ERROR, KEY_OUTDATED, KEY_NOT_FOUND, NOT_VALID_IP, INVALID_PLUGIN, VALID;
+		WRONG_RESPONSE, PAGE_ERROR, URL_ERROR, KEY_OUTDATED, KEY_NOT_FOUND, NOT_VALID_IP, INVALID_PLUGIN, VALID
 	}
 }
