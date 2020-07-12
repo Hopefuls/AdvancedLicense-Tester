@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/..</output-path>
     <root id="archive" name="AdvancedLicense-Tester.jar">
       <element id="module-output" name="AdvancedLicense-Tester" />
+      <element id="dir-copy" path="$PROJECT_DIR$/resources" />
     </root>
   </artifact>
 </component>
