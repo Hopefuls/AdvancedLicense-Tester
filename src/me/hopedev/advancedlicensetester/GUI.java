@@ -84,11 +84,18 @@ public class GUI extends JFrame {
 
 
     private void onCancel() {
-        if (ConnectorThread.currentThread.isAlive()) {
-            ConnectorThread.currentThread.interrupt();
-            LogHandler.setStatus("Request aborted!", Color.red);
-        } else {
-            dispose();
+        try {
+            if (ConnectorThread.currentThread.isAlive()) {
+                ConnectorThread.currentThread.interrupt();
+                LogHandler.setStatus("Request aborted!", Color.red);
+                return;
+            }
+        } catch (Exception e) {
+
         }
+        dispose();
+        System.out.println("CANCEL detected, killing Process..");
+        System.exit(0);
     }
+
 }
