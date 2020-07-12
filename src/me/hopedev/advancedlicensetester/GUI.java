@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GUI extends JDialog {
+public class GUI extends JFrame {
     public JTextPane OutputLog;
     public JTextField VerificationURL;
     public JTextField LicenseKey;
@@ -17,9 +17,7 @@ public class GUI extends JDialog {
 
 
     public GUI() {
-
         setContentPane(contentPane);
-        setModal(true);
         getRootPane().setDefaultButton(buttonOK);
         GateKeeper.status = StatusRep;
         GateKeeper.output = OutputLog;
@@ -51,12 +49,7 @@ public class GUI extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    public static void main() {
-        GUI dialog = new GUI();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
+
 
     private void onOK() {
         GateKeeper.status.setVisible(true);
