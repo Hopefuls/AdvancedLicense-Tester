@@ -91,7 +91,7 @@ public class GUI extends JFrame {
                 return;
             }
         } catch (Exception e) {
-
+            //Just here to make sure the rest doesn't run when currentThread is null
         }
         dispose();
         System.out.println("CANCEL detected, killing Process..");
