@@ -24,7 +24,7 @@ public class Main {
         BufferedImage img = ImageIO.read(url);
         File file = new File("Icon");
         ImageIO.write(img, "png", file);
-
+        System.out.println("Setting GUI..");
         // Start the GUI
         GUI dialog = new GUI();
         // pack it
@@ -36,5 +36,6 @@ public class Main {
         dialog.setIconImage(image);
         // finally, show it
         dialog.setVisible(true);
+
     }
 }
