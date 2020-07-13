@@ -2,6 +2,7 @@
 # AdvancedLicense-Tester
 A simple-to-use tool to test your [AdvancedLicense Licensing System by Leoko](https://www.spigotmc.org/resources/advancedlicense.20823/)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/hopefuls/advancedlicense-tester/badge)](https://www.codefactor.io/repository/github/hopefuls/advancedlicense-tester)
 ## Usage
 This Tool allows you to do simple request in order to check the functionality of your AdvancedLicense Licensing System without the hassle to either create a new Plugin purely for testing, or adding the validation into your existing plugin.
 
