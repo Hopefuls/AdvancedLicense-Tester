@@ -36,6 +36,6 @@ public class Main {
         dialog.setIconImage(image);
         // finally, show it
         dialog.setVisible(true);
-        System.out.println("Successfully started! yes no does it work? 11111^11111");
+        System.out.println("Successfully started! yes no does it work? 11111^1111dw1");
     }
 }
