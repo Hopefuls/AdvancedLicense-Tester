@@ -18,7 +18,7 @@ public class Main {
     }
 
     private static void initializeGUI() throws IOException {
-
+        System.out.println("Starting...");
         // Download Icon because im tired asf of the resources folder gonna kms
         URL url = new URL("https://raw.githubusercontent.com/Hopefuls/AdvancedLicense-Tester/master/resources/Icon.png");
         BufferedImage img = ImageIO.read(url);
