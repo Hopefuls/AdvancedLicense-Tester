@@ -36,6 +36,5 @@ public class Main {
         dialog.setIconImage(image);
         // finally, show it
         dialog.setVisible(true);
-        System.out.println("Started!");
     }
 }
