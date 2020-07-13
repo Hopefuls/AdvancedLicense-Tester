@@ -1,4 +1,4 @@
-
+[![CodeFactor](https://www.codefactor.io/repository/github/hopefuls/advancedlicense-tester/badge)](https://www.codefactor.io/repository/github/hopefuls/advancedlicense-tester)
 # AdvancedLicense-Tester
 A simple-to-use tool to test your [AdvancedLicense Licensing System by Leoko](https://www.spigotmc.org/resources/advancedlicense.20823/)
 
