@@ -29,7 +29,9 @@ public class startVerification {
             case KEY_NOT_FOUND:
                 LogHandler.setStatus("KEY NOT FOUND, but Server VALID! [200]", Color.green);
                 break;
-
+            default:
+                LogHandler.setStatus(vt.toString(), Color.blue);
+                break;
         }
 
 
