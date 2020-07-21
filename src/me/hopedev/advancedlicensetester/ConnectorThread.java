@@ -14,7 +14,7 @@ public class ConnectorThread implements Runnable {
 
     @Override
     public void run() {
-        new startVerification(License, Validation, Debug);
+        new StartVerification(License, Validation, Debug);
     }
 
     public void connect() {
