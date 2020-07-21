@@ -1,5 +1,7 @@
 package me.hopedev.advancedlicensetester;
 
+import net.arikia.dev.drpc.DiscordRPC;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -96,6 +98,7 @@ public class GUI extends JFrame {
         dispose();
         System.out.println("CANCEL detected, killing Process..");
         System.exit(0);
+        DiscordRPC.discordShutdown();
     }
 
 }

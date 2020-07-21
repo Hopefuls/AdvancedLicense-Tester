@@ -1,6 +1,11 @@
 package me.hopedev.advancedlicensetester;
 
 
+import me.hopedev.advancedlicensetester.RichPresence.ReadyEvent;
+import net.arikia.dev.drpc.DiscordEventHandlers;
+import net.arikia.dev.drpc.DiscordRPC;
+import net.arikia.dev.drpc.DiscordRichPresence;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,9 +14,10 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Main {
-    private static ClassLoader classLoader = Main.class.getClassLoader();
+    private static final ClassLoader classLoader = Main.class.getClassLoader();
 
     public static void main(String[] args) throws IOException {
+        startup();
         initializeGUI();
 
 
@@ -35,7 +41,18 @@ public class Main {
         Image image = ImageIO.read(file);
         dialog.setIconImage(image);
         // finally, show it
+        dialog.setResizable(false);
         dialog.setVisible(true);
-
     }
+
+
+    public static void startup() {
+        DiscordEventHandlers handlers = new DiscordEventHandlers.Builder().setReadyEventHandler(new ReadyEvent()).build();
+
+        DiscordRPC.discordInitialize("735171066263109726", handlers, true);
+        DiscordRichPresence rich = new DiscordRichPresence.Builder("Testing their AdvancedLicense System").setBigImage("icon", "AdvancedLicense-Tester by HopeDev").setSmallImage("advancedlicense", "AdvancedLicense by Leoko").setStartTimestamps(System.currentTimeMillis()).build();
+        DiscordRPC.discordRunCallbacks();
+        DiscordRPC.discordUpdatePresence(rich);
+    }
+
 }

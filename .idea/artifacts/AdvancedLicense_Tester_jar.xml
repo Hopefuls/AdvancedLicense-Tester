@@ -1,9 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="AdvancedLicense-Tester:jar">
+  <artifact type="jar" build-on-make="true" name="AdvancedLicense-Tester:jar">
     <output-path>$PROJECT_DIR$/..</output-path>
     <root id="archive" name="AdvancedLicense-Tester.jar">
       <element id="module-output" name="AdvancedLicense-Tester" />
       <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/resources/discord-rpc.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
